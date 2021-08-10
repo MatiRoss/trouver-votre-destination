@@ -14,6 +14,12 @@ class Description {
         span.id = "descriptionWeather"
         span.setAttribute('class', 'italic')
         descriptionDiv.appendChild(span)
+        const liste = document.createElement('ul')
+
+
+
+
+
         document.getElementById('main').appendChild(descriptionSection)
     }
 

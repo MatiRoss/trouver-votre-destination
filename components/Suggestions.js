@@ -42,16 +42,7 @@ class Suggestions {
                 nom: nomDepartement
             }
         } = data;
-
-        // const card = document.createElement('div');
-        // const ville = document.createElement('span');
-        // const departement = document.createElement('span');
-        // ville.innerHTML = `${nom} (${code})`;
         departement.innerHTML = `${nomDepartement || '??'} (${codeDepartement || '??'})`;
-        // card.setAttribute('class', 'flex flex-col min-w-1/6 h-16 px-2 items-center justify-center cursor-pointer');
-        // departement.setAttribute('class', 'text-gray-400 text-sm')
-        // card.appendChild(ville);
-        // card.appendChild(departement);
         card.addEventListener('click', () => {
             $('#input-search').val(nom);
             CityInput.searchCity(nom);

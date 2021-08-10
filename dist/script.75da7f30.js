@@ -321,16 +321,8 @@ var Suggestions = /*#__PURE__*/function () {
           code = data.code,
           _data$departement = data.departement,
           codeDepartement = _data$departement.code,
-          nomDepartement = _data$departement.nom; // const card = document.createElement('div');
-      // const ville = document.createElement('span');
-      // const departement = document.createElement('span');
-      // ville.innerHTML = `${nom} (${code})`;
-
-      departement.innerHTML = "".concat(nomDepartement || '??', " (").concat(codeDepartement || '??', ")"); // card.setAttribute('class', 'flex flex-col min-w-1/6 h-16 px-2 items-center justify-center cursor-pointer');
-      // departement.setAttribute('class', 'text-gray-400 text-sm')
-      // card.appendChild(ville);
-      // card.appendChild(departement);
-
+          nomDepartement = _data$departement.nom;
+      departement.innerHTML = "".concat(nomDepartement || '??', " (").concat(codeDepartement || '??', ")");
       card.addEventListener('click', function () {
         $('#input-search').val(nom);
 
@@ -426,6 +418,7 @@ var Description = /*#__PURE__*/function () {
       span.id = "descriptionWeather";
       span.setAttribute('class', 'italic');
       descriptionDiv.appendChild(span);
+      var liste = document.createElement('ul');
       document.getElementById('main').appendChild(descriptionSection);
     }
   }]);
@@ -473,11 +466,12 @@ var main = document.getElementById('main');
 var componentsArray = [header, cityInput, suggestions, map, description];
 componentsArray.forEach(function (component) {
   component.createHtmlElement();
-}); // $("#input-search").change(function () {
-//     const city = this.value;
-//     cityInput.searchCity(city);
-//     suggestions.searchForSuggestion(city);
-// });
+});
+$("#input-search").change(function () {
+  var city = this.value;
+  cityInput.searchCity(city);
+  suggestions.searchForSuggestion(city);
+});
 },{"/components/CityInput":"components/CityInput.js","./components/Suggestions":"components/Suggestions.js","./components/Map":"components/Map.js","./components/Header":"components/Header.js","./components/Description":"components/Description.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

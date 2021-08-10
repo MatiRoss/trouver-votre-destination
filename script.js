@@ -18,8 +18,8 @@ componentsArray.forEach(component => {
     component.createHtmlElement()
 })
 
-// $("#input-search").change(function () {
-//     const city = this.value;
-//     cityInput.searchCity(city);
-//     suggestions.searchForSuggestion(city);
-// });
+$("#input-search").change(function () {
+    const city = this.value;
+    cityInput.searchCity(city);
+    suggestions.searchForSuggestion(city);
+});
